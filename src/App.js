@@ -10,7 +10,7 @@ import idl from './idl.json';
 import kp from './keypair.json'
 
 // SystemProgram is a reference to the Solana runtime!
-const { SystemProgram, Keypair } = web3;
+const { SystemProgram } = web3;
 
 const arr = Object.values(kp._keypair.secretKey)
 const secret = new Uint8Array(arr)
@@ -31,12 +31,7 @@ const opts = {
 const TWITTER_HANDLE = 'ju5td0m7m1nd';
 const TWITTER_LINK = `https://twitter.com/@${TWITTER_HANDLE}`;
 
-const TEST_GIFS = [
-	'https://media1.giphy.com/media/sExL4UvrxRudpSIRCx/giphy.gif?cid=790b7611f9ec301234590b19da1ff30e6a95b262a41c315d&rid=giphy.gif&ct=g',
-	'https://media.giphy.com/media/O2qojqa5s0VOJfbe2e/giphy.gif',
-	'https://media.giphy.com/media/R1cZlHJ7lWLBM80L3z/giphy-downsized-large.gif',
-	'https://media.giphy.com/media/17mh5wF6ElzT2czVNJ/giphy.gif'
-]
+
 
 const App = () => {
   // State
@@ -195,7 +190,7 @@ const App = () => {
    <div className="gif-grid">
    {gifList.map((item, index) => (
             <div className="gif-item" key={index}>
-              <img src={item.gifLink} />
+              <img src={item.gifLink} alt="git" />
             </div>
           ))}
    </div>
